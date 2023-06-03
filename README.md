@@ -48,11 +48,6 @@ Let`s check the [simple example](https://github.com/musukvl/article-terraform-re
     ```
 3. Actual storage account has `/subscriptions/5293af6a-eac6-493f-8d6f-e6358448a2ff/resourceGroups/ary-app-rg/providers/Microsoft.Storage/storageAccounts/aryappsa` id in Azure cloud.   
 
-
-Keep in mind, that `name` attribute of `azurerm_storage_account` and name of Terraform resource block are different things. 
-`name` attribute of `azurerm_storage_account` is not part of resource identifier. 
-
-
 Terraform matching resource on each level by corresponding identifier. 
 
 For example, if you change name of the resource in *.tf-file:
@@ -64,9 +59,15 @@ During the `terraform plan` operation:
 * Terraform realizes that it has no matching code definition for resource in the state with type `azurerm_storage_account` and name `application_storage`. So Terraform will destroy resource in Azure and remove it from state.
 * Terraform realizes that it has no matching record in the state for resource defined in the code with identifier `azurerm_storage_account.application_storage_NEW`. So Terraform will create it in Azure and add record to the state.
 
+## Identifiers vs attributes
+
+Keep in mind, that `name` attribute of `azurerm_storage_account` and name of Terraform resource block are different things. 
+
+The `name` attribute of `azurerm_storage_account` is not part of resource identifier. 
+Changing attributes could cause resource recreation in some cases and depends on resource provider, but changing identifier *always* cause resource recreation.
 
 
-# Resource identifier in case of `for_each`
+## Resource identifier in case of `for_each`
 If `for_each` is used in resource definition, multiple instances of resources will be created. Each instance can be addressed by index key.
 
 For example, let's check the levels for azure storage account resource in [for_each case example](https://github.com/musukvl/article-terraform-resource-identification/blob/master/002-for_each/main.tf)
@@ -122,6 +123,3 @@ For example, let's check the levels for azure storage account resource in [for_e
    ``` 
 
 3. Actual storage accounts have `/subscriptions/5293af6a-eac6-493f-8d6f-e6358448a2ff/resourceGroups/ary-app-rg/providers/Microsoft.Storage/storageAccounts/aryappsa` and `/subscriptions/5293af6a-eac6-493f-8d6f-e6358448a2ff/resourceGroups/ary-app-rg/providers/Microsoft.Storage/storageAccounts/aryemailsendersvc` ids in Azure cloud.
-
-
-## Resource identifier in case of `count`

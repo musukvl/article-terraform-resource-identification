@@ -1,0 +1,180 @@
+{
+  "version": 4,
+  "terraform_version": "1.4.2",
+  "serial": 30,
+  "lineage": "c5a407d7-f90f-460e-ae50-09dd6a6d2e6e",
+  "outputs": {},
+  "resources": [
+    {
+      "mode": "managed",
+      "type": "azurerm_resource_group",
+      "name": "application_rg",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "/subscriptions/178cfc44-a403-44f8-9417-cb71b7e69524/resourceGroups/ary-app-rg",
+            "location": "northeurope",
+            "name": "ary-app-rg",
+            "tags": null,
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "cZAaYyCacXZYayyBYAzZyXAYbbabAYBCbAAczzxXAAaZZcACxXXCycBbzAzZBXxcZZybzAyzAbzYyAbxXYByAZycXaCXBaaCabaZXAcyzcbZbZCCBAZcCxYazyBXYYCaZCbxzaACzxazaaAxaaYZBBZaxYZccBaAZxaBzyBCxbZCZyY="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_storage_account",
+      "name": "application_storage",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 3,
+          "attributes": {
+            "access_tier": "Hot",
+            "account_kind": "StorageV2",
+            "account_replication_type": "GRS",
+            "account_tier": "Standard",
+            "allow_nested_items_to_be_public": true,
+            "allowed_copy_scope": "",
+            "azure_files_authentication": [],
+            "blob_properties": [
+              {
+                "change_feed_enabled": false,
+                "change_feed_retention_in_days": 0,
+                "container_delete_retention_policy": [],
+                "cors_rule": [],
+                "default_service_version": "",
+                "delete_retention_policy": [],
+                "last_access_time_enabled": false,
+                "restore_policy": [],
+                "versioning_enabled": false
+              }
+            ],
+            "cross_tenant_replication_enabled": true,
+            "custom_domain": [],
+            "customer_managed_key": [],
+            "default_to_oauth_authentication": false,
+            "edge_zone": "",
+            "enable_https_traffic_only": true,
+            "id": "/subscriptions/178cfc44-a403-44f8-9417-cb71b7e69524/resourceGroups/ary-app-rg/providers/Microsoft.Storage/storageAccounts/aryappsa",
+            "identity": [],
+            "immutability_policy": [],
+            "infrastructure_encryption_enabled": false,
+            "is_hns_enabled": false,
+            "large_file_share_enabled": null,
+            "location": "northeurope",
+            "min_tls_version": "TLS1_2",
+            "name": "aryappsa",
+            "network_rules": [
+              {
+                "bypass": [
+                  "AzureServices"
+                ],
+                "default_action": "Allow",
+                "ip_rules": [],
+                "private_link_access": [],
+                "virtual_network_subnet_ids": []
+              }
+            ],
+            "nfsv3_enabled": false,
+            "primary_access_key": "yXBbXyBAaXZxBCCCbabbczcbzyXcccXyzZXxaXXxYbXCzxbACYZBZXABBxXYBABbCZyCxAZxbxxbyZyAAzCbYZbYYbyYyAxBXcXC==",
+            "primary_blob_connection_string": "BxXbZzBcxXazAxXaCAYXzAYyXBacxyZZyAAzCxbBXaYxZBazxaCBAYacAcXAYaaCzByXCczaXzcaXCABYAAYxAZaYbBXZXAYBzxA==",
+            "primary_blob_endpoint": "https://aryappsa.blob.core.windows.net/",
+            "primary_blob_host": "aryappsa.blob.core.windows.net",
+            "primary_connection_string": "abZYbzAcYZzxyXAYxYzcBbAyZaYbCZXyXyYcBYccBxyxBxBYYBzCCcxayxZbZYYbCZAbxaaAzXxxXXYxaBcyAAcCZzYbxzyCBYZA==",
+            "primary_dfs_endpoint": "https://aryappsa.dfs.core.windows.net/",
+            "primary_dfs_host": "aryappsa.dfs.core.windows.net",
+            "primary_file_endpoint": "https://aryappsa.file.core.windows.net/",
+            "primary_file_host": "aryappsa.file.core.windows.net",
+            "primary_location": "northeurope",
+            "primary_queue_endpoint": "https://aryappsa.queue.core.windows.net/",
+            "primary_queue_host": "aryappsa.queue.core.windows.net",
+            "primary_table_endpoint": "https://aryappsa.table.core.windows.net/",
+            "primary_table_host": "aryappsa.table.core.windows.net",
+            "primary_web_endpoint": "https://aryappsa.z16.web.core.windows.net/",
+            "primary_web_host": "aryappsa.z16.web.core.windows.net",
+            "public_network_access_enabled": true,
+            "queue_encryption_key_type": "Service",
+            "queue_properties": [
+              {
+                "cors_rule": [],
+                "hour_metrics": [
+                  {
+                    "enabled": true,
+                    "include_apis": true,
+                    "retention_policy_days": 7,
+                    "version": "1.0"
+                  }
+                ],
+                "logging": [
+                  {
+                    "delete": false,
+                    "read": false,
+                    "retention_policy_days": 0,
+                    "version": "1.0",
+                    "write": false
+                  }
+                ],
+                "minute_metrics": [
+                  {
+                    "enabled": false,
+                    "include_apis": false,
+                    "retention_policy_days": 0,
+                    "version": "1.0"
+                  }
+                ]
+              }
+            ],
+            "resource_group_name": "ary-app-rg",
+            "routing": [],
+            "sas_policy": [],
+            "secondary_access_key": "ZaZbAcCZzAxBaYCxxZbCAxxYbbbBXcXXcxbXcZBZYXcAyZXzzAxZcXZYZCcXYXxzCybaAYXZaycxbBCCXBbYACxyxzAZCaAxByxc==",
+            "secondary_blob_connection_string": "",
+            "secondary_blob_endpoint": null,
+            "secondary_blob_host": null,
+            "secondary_connection_string": "ZYZcYYzbBYBXzzABZZcbyCybaABAzxxCxzZYaZCZXabbyzxzCbYXzaAyxcCxAbCXZbBBBBBcXYzBAxbbbYyZZbzYcxYXxBxAcZaX==",
+            "secondary_dfs_endpoint": null,
+            "secondary_dfs_host": null,
+            "secondary_file_endpoint": null,
+            "secondary_file_host": null,
+            "secondary_location": "westeurope",
+            "secondary_queue_endpoint": null,
+            "secondary_queue_host": null,
+            "secondary_table_endpoint": null,
+            "secondary_table_host": null,
+            "secondary_web_endpoint": null,
+            "secondary_web_host": null,
+            "sftp_enabled": false,
+            "share_properties": [
+              {
+                "cors_rule": [],
+                "retention_policy": [
+                  {
+                    "days": 7
+                  }
+                ],
+                "smb": []
+              }
+            ],
+            "shared_access_key_enabled": true,
+            "static_website": [],
+            "table_encryption_key_type": "Service",
+            "tags": null,
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "BYZXXyyYyYZZxYZBccaAxybBabAbCzCAACcXbcbZBbXYzBZYAbyxzBAbczAcycCCyACAbBBzaCyyazZyZCBZxbBzBCyaYaAcyAzxybAYzxAZabcYYAYaxCzXZxACyxbybcZXaybYBZbxxYyZxCZaZxcbcXYcXccXcYzbYAaZczbYAaX=",
+          "dependencies": [
+            "azurerm_resource_group.application_rg"
+          ]
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}
+
