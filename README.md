@@ -1,3 +1,12 @@
+---
+title: Terraform resources identification
+published: false # if you set this to false it will publish the page as a draft
+description: An article used to test pushing to Dev.to
+tags: 'terraform'
+cover_image: ./assets/logo.jpg
+canonical_url: null  # set this if you have a website you want to be promoted
+---
+
 # Terraform resources identification
 
 ## Basic concepts
@@ -46,6 +55,8 @@ Let`s check the [simple example](https://github.com/musukvl/article-terraform-re
       } 
     ]           
     ```
+    Full example of state file is [here](https://github.com/musukvl/article-terraform-resource-identification/blob/master/001-basic-example/terraform.tfstate.json).
+
 3. Actual storage account has `/subscriptions/5293af6a-eac6-493f-8d6f-e6358448a2ff/resourceGroups/ary-app-rg/providers/Microsoft.Storage/storageAccounts/aryappsa` id in Azure cloud.   
 
 Terraform matching resource on each level by corresponding identifier. 
@@ -121,5 +132,6 @@ For example, let's check the levels for azure storage account resource in [for_e
     }
    ]
    ``` 
+   Full example of state file is [here](https://github.com/musukvl/article-terraform-resource-identification/blob/master/002-for_each/terraform.tfstate.json).
 
 3. Actual storage accounts have `/subscriptions/5293af6a-eac6-493f-8d6f-e6358448a2ff/resourceGroups/ary-app-rg/providers/Microsoft.Storage/storageAccounts/aryappsa` and `/subscriptions/5293af6a-eac6-493f-8d6f-e6358448a2ff/resourceGroups/ary-app-rg/providers/Microsoft.Storage/storageAccounts/aryemailsendersvc` ids in Azure cloud.
