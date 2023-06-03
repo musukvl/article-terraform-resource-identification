@@ -1,5 +1,6 @@
 name: publish-devto
 on:
+  workflow_dispatch:
   push:
     branches: [main]
   pull_request:
@@ -15,7 +16,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3 # checks out my code to the actions build    
-    
+
     - name: Publish article on Dev.to    
       uses: sinedied/publish-devto@v2
       with:
