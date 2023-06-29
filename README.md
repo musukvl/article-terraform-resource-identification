@@ -1,6 +1,6 @@
 ---
 title: Terraform resources identification
-published: false
+published: true
 description: An article used to test pushing to Dev.to
 tags: terraform
 cover_image: ./logo.jpg
