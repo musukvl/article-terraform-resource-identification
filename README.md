@@ -60,6 +60,7 @@ In the terraform state the storage account is identified with `type` and `name` 
   } 
 ]           
 ```
+
 Full example of state file is [here](https://github.com/musukvl/article-terraform-resource-identification/blob/master/001-basic-example/terraform.tfstate.json).
 
 Actual storage account has `/subscriptions/xxxxx/resourceGroups/ary-app-rg/providers/Microsoft.Storage/storageAccounts/aryappsa` id in Azure cloud.   
@@ -139,7 +140,8 @@ resources: [
   ]
 }
 ]
-``` 
+```
+
 
 Full example of state file is [here](https://github.com/musukvl/article-terraform-resource-identification/blob/master/002-for_each/terraform.tfstate.json).
 
