@@ -28,7 +28,7 @@ The link to code examples: https://github.com/musukvl/article-terraform-resource
 
 ## Resource identifier in case of single resource
 
-Let`s check the [simple example](https://github.com/musukvl/article-terraform-resource-identification/blob/master/001-basic-example/main.tf) of azure storage account created with Terraform and track resource identification on each level:
+Let's check the [simple example](https://github.com/musukvl/article-terraform-resource-identification/blob/master/001-basic-example/main.tf) of azure storage account created with Terraform and track resource identification on each level:
 
 Resource definition in .tf-file code level is:
 
