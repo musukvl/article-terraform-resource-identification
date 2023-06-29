@@ -142,4 +142,9 @@ resources: [
 
 Full example of state file is [here](https://github.com/musukvl/article-terraform-resource-identification/blob/master/002-for_each/terraform.tfstate.json).
 
-3. Actual storage accounts have `/subscriptions/xxxxx/resourceGroups/ary-app-rg/providers/Microsoft.Storage/storageAccounts/aryappsa` and `/subscriptions/xxxxx/resourceGroups/ary-app-rg/providers/Microsoft.Storage/storageAccounts/aryemailsendersvc` ids in Azure cloud.
+Actual storage accounts have `/subscriptions/xxxxx/resourceGroups/ary-app-rg/providers/Microsoft.Storage/storageAccounts/aryappsa` and `/subscriptions/xxxxx/resourceGroups/ary-app-rg/providers/Microsoft.Storage/storageAccounts/aryemailsendersvc` ids in Azure cloud.
+
+
+## Conclusion
+
+Understanding of resource identification is very important in case of shared terraform modules and for cases when resources can't be easily recreated for refactoring purposes. 
