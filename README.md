@@ -6,6 +6,7 @@ tags: terraform
 cover_image: ./logo.jpg
 canonical_url: null
 id: 1520872
+date: '2023-06-29T14:00:48Z'
 ---
 
 # Terraform resources identification
