@@ -5,7 +5,7 @@ description: An article used to test pushing to Dev.to
 tags: terraform
 cover_image: ./assets/logo.jpg
 canonical_url: null
-id: 1491358
+id: 0
 ---
 
 # Terraform resources identification
