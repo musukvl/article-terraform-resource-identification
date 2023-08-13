@@ -15,7 +15,7 @@ date: '2023-06-29T14:00:48Z'
 
 Each resource created with Terraform present on three levels:
 
-1. Resource has definition in .tf-file as `resource` block.
+1. Resource has definition in .tf-file code as `resource` block.
 2. Created resource has record in Terraform state file.
 3. Resource is also actual resource created in a cloud.
 
@@ -147,6 +147,71 @@ Full example of state file is [here](https://github.com/musukvl/article-terrafor
 
 Actual storage accounts have `/subscriptions/xxxxx/resourceGroups/ary-app-rg/providers/Microsoft.Storage/storageAccounts/aryappsa` and `/subscriptions/xxxxx/resourceGroups/ary-app-rg/providers/Microsoft.Storage/storageAccounts/aryemailsendersvc` ids in Azure cloud.
 
+
+## Resource identifier in case of `count`
+The `count` statement works pretty similar to `for_each` except resource idex is array index number instead of map key string.
+
+Let's check [`count` case example](https://github.com/musukvl/article-terraform-resource-identification/blob/master/003-count/main.tf) the same as `for_each` case example:
+
+Resource definition in .tf-file code is:
+
+```hcl
+locals {
+  applications = [
+    {
+      name = "document-parser-service"
+      storage_account_name = "arydocparsesvc"
+    },
+    {
+      name = "email-sender-service"
+      storage_account_name = "aryemailsendersvc"
+    }
+  ]
+}
+
+resource "azurerm_storage_account" "application_storage" {
+  count = length(local.applications)
+```
+
+In code the storage account can be referenced with index key: `azurerm_storage_account.application_storage[0]`.
+
+In the state we will see two instances of storage account resource:
+
+```json
+resources: [
+{
+  "mode": "managed",
+  "type": "azurerm_storage_account",
+  "name": "application_storage",
+  "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+  "instances": [
+    {
+      "index_key": 0,
+      "attributes": {
+        "id": "/subscriptions/xxxxx/resourceGroups/ary-app-rg-document-parser-service/providers/Microsoft.Storage/storageAccounts/arydocparsesvc",
+        "name": "arydocparsesvc",
+        ...
+      }
+    },
+    {
+      "index_key": 1,
+      "attributes": {
+        "id": "/subscriptions/xxxxx/resourceGroups/ary-app-rg-email-sender-service/providers/Microsoft.Storage/storageAccounts/aryemailsendersvc",
+        "name": "aryemailsendersvc"            
+        ...
+      }
+    }        
+  ]
+}
+]
+```
+
+
+Full example of state file is [here](https://github.com/musukvl/article-terraform-resource-identification/blob/master/003-count/terraform.tfstate.json).
+
+Storage accounts has the same IDs and names in azure as in `for_each` case example, but the difference identification in state file and in code.
+
+Using int idex instead of string key is not very convenient, so `for_each` is preferred over `count` in most cases.
 
 ## Conclusion
 
