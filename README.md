@@ -1,5 +1,5 @@
 ---
-title: Terraform resources identification
+title: Resource identification in Terraform
 published: true
 description: An article used to test pushing to Dev.to
 tags: terraform
@@ -9,7 +9,7 @@ id: 1520872
 date: '2023-06-29T14:00:48Z'
 ---
 
-# Terraform resources identification
+# Resource identification in Terraform
 
 ## Basic concepts
 
